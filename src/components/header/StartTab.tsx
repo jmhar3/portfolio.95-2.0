@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Stack } from "@chakra-ui/react";
+import { Image, Stack } from "@chakra-ui/react";
 
 import computer from "../../images/computer.png";
 import { MenuProps } from "./Header";
@@ -50,7 +50,7 @@ export const StartTab = (props: StartTabProps) => {
       }}
     >
       <Stack direction="row">
-        <img src={computer} />
+        <Image aria-label={label} src={computer} />
         {label}
       </Stack>
       {!clickable && "►"}

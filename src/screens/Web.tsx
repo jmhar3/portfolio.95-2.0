@@ -1,10 +1,6 @@
 import * as React from "react";
 import { useBoolean, Stack } from "@chakra-ui/react";
 
-// import Clouds from '../background/Clouds.js';
-// import Stars from '../background/Stars.js';
-// import Moon from '../background/Moon.js';
-
 import { Links } from "../components/Links";
 import { Header } from "../components/header/Header";
 
@@ -18,6 +14,8 @@ import { Header } from "../components/header/Header";
 // import Resume from './components/windows/Resume';
 // import Music from './components/windows/Music';
 // import MineSweeper from './components/windows/MineSweeper';
+
+import { Background } from "../components/background/Background";
 
 export interface WindowProps {
   minimise: boolean;
@@ -201,9 +199,7 @@ export const Web = () => {
         )} */}
       </Stack>
 
-      {/* <Stars />
-      <Clouds />
-      <Moon /> */}
+      <Background />
     </>
   );
 };

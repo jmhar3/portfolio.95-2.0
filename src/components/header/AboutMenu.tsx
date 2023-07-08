@@ -8,10 +8,10 @@ const AboutMenu = (props: MenuProps) => {
   const { showAboutMenu, setShowAboutMenu } = props;
 
   const [c100, c300, c400] = useToken("colors", [
-    "p95.light.100",
-    "p95.light.200",
-    "p95.light.300",
-    "p95.light.400",
+    "p95.100",
+    "p95.200",
+    "p95.300",
+    "p95.400",
   ]);
 
   return (

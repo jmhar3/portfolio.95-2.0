@@ -1,11 +1,11 @@
 import { extendTheme, defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
 const border = defineStyle({
-  borderLeft: "2px solid p95.light.100",
-  borderTop: "2px solid p95.light.100",
-  borderRight: "2px solid p95.light.400",
-  borderBottom: "2px solid p95.light.400",
-  boxShadow: `-2px -2px  p95.light.300 inset`,
+  borderLeft: "2px solid p95.100",
+  borderTop: "2px solid p95.100",
+  borderRight: "2px solid p95.400",
+  borderBottom: "2px solid p95.400",
+  boxShadow: `-2px -2px  p95.300 inset`,
 });
 
 export const borderVariantTheme = defineStyleConfig({
@@ -21,12 +21,12 @@ export const theme = extendTheme({
     Divider: borderVariantTheme,
     Heading: {
       baseStyle: {
-        fontColor: `p95.light.400`,
+        fontColor: `p95.400`,
       },
     },
     Text: {
       baseStyle: {
-        fontColor: `p95.light.400`,
+        fontColor: `p95.400`,
       },
     },
     Button: {
@@ -39,24 +39,16 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: `p95.light.100`,
+        bg: `p95.400`,
       },
     },
   },
   colors: {
     p95: {
-      light: {
-        100: "#E4F4F5",
-        200: "#C6E8EA",
-        300: "#84C2C6",
-        400: "#025258",
-      },
-      dark: {
-        100: "#025258",
-        200: "#84C2C6",
-        300: "#C6E8EA",
-        400: "#E4F4F5",
-      },
+      100: "#E7F3F7",
+      200: "#CFE7EF",
+      300: "#58A4BD",
+      400: "#035670",
     },
   },
 });

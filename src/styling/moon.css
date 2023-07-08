@@ -1,0 +1,13 @@
+.moon {
+ position: absolute;
+ right: 20%;
+ top: 30%;
+ margin: -100px;
+ width: 150px;
+ height: 150px;
+ background: #ffefa7;
+ border-radius: 50%;
+ box-shadow: inset -39px 0px 0 0px #fde870;
+ transition: transform 0.2s ease-in-out;
+ z-index: -2;
+}

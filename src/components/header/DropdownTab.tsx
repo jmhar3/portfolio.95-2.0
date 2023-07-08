@@ -14,8 +14,8 @@ export const DropdownTab = (props: DropdownTabProps) => {
 
   return (
     <Button
-      bg="p95.light.200"
-      color="p95.light.400"
+      bg="p95.200"
+      color="p95.400"
       textTransform="capitalize"
       onClick={() => {
         setScreenOnFront(name);

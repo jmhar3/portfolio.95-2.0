@@ -25,13 +25,7 @@ export const NavBar = (props: MenuProps) => {
   const time = React.useMemo(() => dayjs().format("hh:mmA"), [dayjs]);
 
   return (
-    <Stack
-      p="2"
-      pb="1"
-      direction="row"
-      justify="space-between"
-      bg="p95.light.200"
-    >
+    <Stack p="2" pb="1" direction="row" justify="space-between" bg="p95.200">
       <Stack direction="row">
         <Stack direction="row">
           <OutsideClickHandler
