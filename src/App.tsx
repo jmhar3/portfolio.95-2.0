@@ -1,17 +1,16 @@
 import * as React from "react";
 
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Web } from "./screens/Web";
 import { Mobile } from "./screens/Mobile";
+import Fonts from "./Fonts";
+
+const theme = extendTheme({
+  fonts: {
+    heading: `'MS Bold', sans-serif`,
+    body: `'MS', sans-serif`,
+  },
+});
 
 export const App = () => {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -28,6 +27,7 @@ export const App = () => {
 
   return (
     <ChakraProvider theme={theme}>
+      <Fonts />
       {isMobile ? <Mobile /> : <Web />}
     </ChakraProvider>
   );
