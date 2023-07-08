@@ -3,8 +3,8 @@ import { Stack, useBoolean } from "@chakra-ui/react";
 
 import { NavBar } from "./NavBar";
 import { StartMenu } from "./StartMenu";
-import AboutMenu from "./AboutMenu";
-import ProgramsMenu from "./ProgramsMenu";
+import { AboutMenu } from "./AboutMenu";
+import { ProgramsMenu } from "./ProgramsMenu";
 import { WebProps, UseBooleanProps } from "../../screens/Web";
 
 export interface MenuProps extends WebProps {
@@ -32,13 +32,13 @@ export const Header = (props: WebProps) => {
   };
 
   return (
-    <Stack position="fixed" bottom="0" w="full" zIndex={3}>
-      <Stack direction="row">
-        <StartMenu {...menuProps} />
+    <Stack position="fixed" bottom="0" w="full" zIndex={3} spacing="0">
+      <Stack direction="row" spacing="0" align="flex-end">
+        {showStartMenu && <StartMenu {...menuProps} />}
 
-        <AboutMenu {...menuProps} />
+        {showAboutMenu && <AboutMenu {...menuProps} />}
 
-        <ProgramsMenu {...menuProps} />
+        {showProgramsMenu && <ProgramsMenu {...menuProps} />}
       </Stack>
 
       <NavBar {...menuProps} />

@@ -3,11 +3,12 @@ import { Stack, useToken } from "@chakra-ui/react";
 
 import { DropdownTab } from "./DropdownTab";
 import { MenuProps } from "./Header";
+import { MenuButton } from "./MenuButton";
 
-const AboutMenu = (props: MenuProps) => {
-  const { showAboutMenu, setShowAboutMenu } = props;
+export const AboutMenu = (props: MenuProps) => {
+  const { setShowAboutMenu } = props;
 
-  const [c100, c300, c400] = useToken("colors", [
+  const [c100, c400] = useToken("colors", [
     "p95.100",
     "p95.200",
     "p95.300",
@@ -16,26 +17,23 @@ const AboutMenu = (props: MenuProps) => {
 
   return (
     <Stack
+      spacing="0"
       direction="column"
       borderLeft={`2px solid ${c100}`}
       borderTop={`2px solid ${c100}`}
       borderRight={`2px solid ${c400}`}
       borderBottom={`2px solid ${c400}`}
-      boxShadow={`-2px -2px  ${c300} inset`}
-      display={showAboutMenu ? "visible" : "hidden"}
       onMouseLeave={setShowAboutMenu.off}
     >
-      <DropdownTab {...props} name="profile" label="about" />
+      <MenuButton {...props} name="profile" label="about" />
 
-      <DropdownTab {...props} name="profile" label="skills" />
+      <MenuButton {...props} name="profile" label="skills" />
 
-      <DropdownTab {...props} name="profile" label="education" />
+      <MenuButton {...props} name="profile" label="education" />
 
-      <DropdownTab {...props} name="profile" label="work" />
+      <MenuButton {...props} name="profile" label="work" />
 
-      <DropdownTab {...props} name="profile" label="projects" />
+      <MenuButton {...props} name="profile" label="projects" />
     </Stack>
   );
 };
-
-export default AboutMenu;

@@ -1,7 +1,15 @@
 import * as React from "react";
 import dayjs from "dayjs";
 import OutsideClickHandler from "react-outside-click-handler";
-import { Box, Image, Stack, IconButton, Divider } from "@chakra-ui/react";
+import {
+  Box,
+  Image,
+  Stack,
+  IconButton,
+  Divider,
+  Text,
+  useToken,
+} from "@chakra-ui/react";
 
 import logo from "../../images/heart.png";
 import email from "../../images/email.png";
@@ -9,6 +17,7 @@ import email from "../../images/email.png";
 import { NavTab } from "./NavTab";
 import { MenuProps } from "./Header";
 import { BorderButton } from "../buttons/BorderButton";
+import { Clock } from "../../helpers/Clock";
 
 export const NavBar = (props: MenuProps) => {
   const {
@@ -22,28 +31,33 @@ export const NavBar = (props: MenuProps) => {
     setIsMuted,
   } = props;
 
-  const time = React.useMemo(() => dayjs().format("hh:mmA"), [dayjs]);
+  const [c100, c200, c300, c400] = useToken("colors", [
+    "p95.100",
+    "p95.200",
+    "p95.300",
+    "p95.400",
+  ]);
+
+  const onOutsideClick = React.useCallback(() => {
+    setShowStartMenu.off();
+    setShowAboutMenu.off();
+    setShowProgramsMenu.off();
+  }, []);
+
+  const onStartClick = React.useCallback(() => {
+    setShowStartMenu.toggle();
+    if (showStartMenu) {
+      setShowAboutMenu.off();
+      setShowProgramsMenu.off();
+    }
+  }, [showStartMenu]);
 
   return (
     <Stack p="2" pb="1" direction="row" justify="space-between" bg="p95.200">
       <Stack direction="row">
         <Stack direction="row">
-          <OutsideClickHandler
-            onOutsideClick={() => {
-              setShowStartMenu.off();
-              setShowAboutMenu.off();
-              setShowProgramsMenu.off();
-            }}
-          >
-            <BorderButton
-              onClick={() => {
-                setShowStartMenu.toggle();
-                if (showStartMenu) {
-                  setShowAboutMenu.off();
-                  setShowProgramsMenu.off();
-                }
-              }}
-            >
+          <OutsideClickHandler onOutsideClick={onOutsideClick}>
+            <BorderButton onClick={onStartClick}>
               <Image src={logo} aria-label="JH" pr="2" />
               Start
             </BorderButton>
@@ -96,10 +110,21 @@ export const NavBar = (props: MenuProps) => {
         </Stack>
       </Stack>
 
-      <Box>
-        <Image src={logo} onClick={setIsMuted.toggle} />
-        {time}
-      </Box>
+      <Stack
+        px="2"
+        bg={c200}
+        color={c400}
+        align="center"
+        direction="row"
+        borderRight={`2px solid ${c100}`}
+        borderBottom={`2px solid ${c100}`}
+        borderLeft={`2px solid ${c400}`}
+        borderTop={`2px solid ${c400}`}
+        boxShadow={`2px 2px  ${c300} inset`}
+      >
+        <Image src={logo} onClick={setIsMuted.toggle} h="18px" w="18px" />
+        <Text>{Clock()}</Text>
+      </Stack>
     </Stack>
   );
 };

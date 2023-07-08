@@ -18,10 +18,11 @@ export const BorderButton = (props: BorderButtonProps) => {
 
   return (
     <Button
-      onClick={onClick}
       px="3"
       bg={c200}
       color={c400}
+      onClick={onClick}
+      _hover={{ boxShadow: "none" }}
       borderLeft={`2px solid ${c100}`}
       borderTop={`2px solid ${c100}`}
       borderRight={`2px solid ${c400}`}

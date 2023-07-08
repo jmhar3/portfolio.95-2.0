@@ -46,7 +46,7 @@ export const theme = extendTheme({
   colors: {
     p95: {
       100: "#E7F3F7",
-      200: "#CFE7EF",
+      200: "#E0F0F5",
       300: "#58A4BD",
       400: "#035670",
     },
