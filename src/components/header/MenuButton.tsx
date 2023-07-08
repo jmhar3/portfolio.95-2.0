@@ -55,17 +55,18 @@ export const MenuButton = (props: MenuButtonProps) => {
       bg="p95.200"
       color="p95.400"
       onClick={onClick}
+      textTransform="capitalize"
       onMouseEnter={onMouseEnter}
-      justifyContent="space-between"
       cursor={clickable ? "pointer" : "default"}
       _hover={{ bg: "p95.400", color: "p95.100" }}
+      justifyContent={isDropdown ? "center" : "space-between"}
       leftIcon={
         isDropdown ? undefined : (
           <Image aria-label={label} src={computer} pr="2" w="33px" />
         )
       }
     >
-      {isDropdown ? label.toUpperCase() : label}
+      {label}
       {!clickable && " ►"}
     </Button>
   );
