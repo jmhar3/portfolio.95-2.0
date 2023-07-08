@@ -1,5 +1,7 @@
 import "../../styling/stars.css";
-import { useEffect } from "react";
+import * as React from "react";
+
+import { Box } from "@chakra-ui/react";
 
 const Stars = () => {
   function getRandomNumber(min, max) {
@@ -26,67 +28,69 @@ const Stars = () => {
     }
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     generateLocation();
   }, []);
 
   return (
-    <div id="stars">
-      <div className="star s1" />
-      <div className="star s2" />
-      <div className="star s3" />
-      <div className="star s4" />
-      <div className="star s5" />
-      <div className="star s6" />
-      <div className="star s7" />
-      <div className="star s8" />
-      <div className="star s9" />
-      <div className="star s1" />
-      <div className="star s2" />
-      <div className="star s3" />
-      <div className="star s4" />
-      <div className="star s5" />
-      <div className="star s6" />
-      <div className="star s7" />
-      <div className="star s8" />
-      <div className="star s9" />
-      <div className="star s1" />
-      <div className="star s2" />
-      <div className="star s3" />
-      <div className="star s4" />
-      <div className="star s5" />
-      <div className="star s6" />
-      <div className="star s7" />
-      <div className="star s8" />
-      <div className="star s9" />
-      <div className="star s1" />
-      <div className="star s2" />
-      <div className="star s3" />
-      <div className="star s4" />
-      <div className="star s5" />
-      <div className="star s6" />
-      <div className="star s7" />
-      <div className="star s8" />
-      <div className="star s9" />
-      <div className="star s1" />
-      <div className="star s2" />
-      <div className="star s3" />
-      <div className="star s4" />
-      <div className="star s5" />
-      <div className="star s6" />
-      <div className="star s7" />
-      <div className="star s8" />
-      <div className="star s9" />
-      <div className="star s1" />
-      <div className="star s2" />
-      <div className="star s3" />
-      <div className="star s4" />
-      <div className="star s5" />
-      <div className="star s6" />
-      <div className="star s7" />
-      <div className="star s8" />
-      <div className="star s9" />
-    </div>
+    <Box h="full" w="full" overflow="hidden">
+      <div id="stars">
+        <div className="star s1" />
+        <div className="star s2" />
+        <div className="star s3" />
+        <div className="star s4" />
+        <div className="star s5" />
+        <div className="star s6" />
+        <div className="star s7" />
+        <div className="star s8" />
+        <div className="star s9" />
+        <div className="star s1" />
+        <div className="star s2" />
+        <div className="star s3" />
+        <div className="star s4" />
+        <div className="star s5" />
+        <div className="star s6" />
+        <div className="star s7" />
+        <div className="star s8" />
+        <div className="star s9" />
+        <div className="star s1" />
+        <div className="star s2" />
+        <div className="star s3" />
+        <div className="star s4" />
+        <div className="star s5" />
+        <div className="star s6" />
+        <div className="star s7" />
+        <div className="star s8" />
+        <div className="star s9" />
+        <div className="star s1" />
+        <div className="star s2" />
+        <div className="star s3" />
+        <div className="star s4" />
+        <div className="star s5" />
+        <div className="star s6" />
+        <div className="star s7" />
+        <div className="star s8" />
+        <div className="star s9" />
+        <div className="star s1" />
+        <div className="star s2" />
+        <div className="star s3" />
+        <div className="star s4" />
+        <div className="star s5" />
+        <div className="star s6" />
+        <div className="star s7" />
+        <div className="star s8" />
+        <div className="star s9" />
+        <div className="star s1" />
+        <div className="star s2" />
+        <div className="star s3" />
+        <div className="star s4" />
+        <div className="star s5" />
+        <div className="star s6" />
+        <div className="star s7" />
+        <div className="star s8" />
+        <div className="star s9" />
+      </div>
+    </Box>
   );
 };
 

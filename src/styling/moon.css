@@ -9,5 +9,5 @@
  border-radius: 50%;
  box-shadow: inset -39px 0px 0 0px #fde870;
  transition: transform 0.2s ease-in-out;
- z-index: -2;
+ z-index: -998;
 }

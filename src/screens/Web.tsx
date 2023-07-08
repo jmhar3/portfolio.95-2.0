@@ -16,6 +16,7 @@ import { Header } from "../components/header/Header";
 // import MineSweeper from './components/windows/MineSweeper';
 
 import { Background } from "../components/background/Background";
+import { useLockedBody } from "usehooks-ts";
 
 export interface WindowProps {
   minimise: boolean;
@@ -44,6 +45,8 @@ export interface WebProps {
 }
 
 export const Web = () => {
+  const [locked, setLocked] = useLockedBody(true, "root");
+
   const [isMuted, setIsMuted] = useBoolean(false);
 
   const [screenOnFront, setScreenOnFront] = React.useState("welcome");

@@ -138,7 +138,7 @@
  background: rgb(205, 239, 255);
 	content: '';
 	position: absolute;
-	z-index: -1;
+	z-index: -997;
 }
 
 .cloud:after {

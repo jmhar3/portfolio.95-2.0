@@ -14,12 +14,13 @@ export interface LinkProps {
 export const Links = () => {
   return (
     <Stack
-      spacing="2"
-      align="center"
-      position="fixed"
       top="3"
       left="3"
+      zIndex={1}
+      spacing="2"
+      align="center"
       w="fit-content"
+      position="fixed"
     >
       <LinkComponent
         link="https://github.com/jmhar3"
@@ -49,10 +50,11 @@ export const LinkComponent = (props: LinkProps) => {
       pb="1"
       isExternal
       href={link}
-      w="fit-content"
+      color="p95.100"
+      w="100%"
       border="dashed 2px"
       borderColor="transparent"
-      _hover={{ textDecoration: "none", borderColor: "purple" }}
+      _hover={{ textDecoration: "none", borderColor: "p95.100" }}
     >
       <Stack align="center" spacing="1">
         <Image src={image} w="39px" />

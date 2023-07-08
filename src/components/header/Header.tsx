@@ -32,7 +32,7 @@ export const Header = (props: WebProps) => {
   };
 
   return (
-    <Stack position="fixed" bottom="0" w="full">
+    <Stack position="fixed" bottom="0" w="full" zIndex={3}>
       <Stack direction="row">
         <StartMenu {...menuProps} />
 
