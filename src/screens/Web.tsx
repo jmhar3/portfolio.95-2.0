@@ -4,7 +4,10 @@ import { useBoolean, Stack } from "@chakra-ui/react";
 // import Clouds from '../background/Clouds.js';
 // import Stars from '../background/Stars.js';
 // import Moon from '../background/Moon.js';
+
 import { Links } from "../components/Links";
+import { Header } from "../components/header/Header";
+
 // import Window from './components/windows/Window';
 // import Welcome from './components/windows/Welcome';
 // import Profile from './components/windows/Profile';
@@ -15,14 +18,39 @@ import { Links } from "../components/Links";
 // import Resume from './components/windows/Resume';
 // import Music from './components/windows/Music';
 // import MineSweeper from './components/windows/MineSweeper';
-// import Header from './components/header/Header.js';
+
+export interface WindowProps {
+  minimise: boolean;
+  close: boolean;
+}
+
+export interface WindowsProps {
+  [key: string]: WindowProps;
+}
+
+export interface UseBooleanProps {
+  on: () => void;
+  off: () => void;
+  toggle: () => void;
+}
+
+export interface WebProps {
+  windows: WindowsProps;
+  setWindows: React.Dispatch<React.SetStateAction<WindowsProps>>;
+  screenOnFront: string;
+  setScreenOnFront: React.Dispatch<React.SetStateAction<string>>;
+  isMuted: boolean;
+  setIsMuted: UseBooleanProps;
+  selectedTab: string;
+  setSelectedTab: React.Dispatch<React.SetStateAction<string>>;
+}
 
 export const Web = () => {
   const [isMuted, setIsMuted] = useBoolean(false);
 
-  const [bringToFront, setBringToFront] = React.useState("welcome");
+  const [screenOnFront, setScreenOnFront] = React.useState("welcome");
 
-  const [windows, setWindows] = React.useState({
+  const [windows, setWindows] = React.useState<WindowsProps>({
     welcome: {
       minimise: false,
       close: false,
@@ -63,13 +91,13 @@ export const Web = () => {
 
   const [selectedTab, setSelectedTab] = React.useState("about");
 
-  const props = {
+  const props: WebProps = {
     windows: windows,
     setWindows: setWindows,
-    bringToFront: bringToFront,
-    setBringToFront: setBringToFront,
-    muted: isMuted,
-    setMuted: setIsMuted,
+    screenOnFront: screenOnFront,
+    setScreenOnFront: setScreenOnFront,
+    isMuted: isMuted,
+    setIsMuted: setIsMuted,
     selectedTab: selectedTab,
     setSelectedTab: setSelectedTab,
   };
@@ -78,9 +106,10 @@ export const Web = () => {
     <>
       <Stack>
         <Links />
-        {/* 
+
         <Header {...props} />
 
+        {/* 
         {!windows.welcome.close && (
           <Window
             {...props}

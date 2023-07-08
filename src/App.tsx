@@ -1,16 +1,10 @@
 import * as React from "react";
 
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { Web } from "./screens/Web";
 import { Mobile } from "./screens/Mobile";
 import Fonts from "./Fonts";
-
-const theme = extendTheme({
-  fonts: {
-    heading: `'MS Bold', sans-serif`,
-    body: `'MS', sans-serif`,
-  },
-});
+import { theme } from "./theme";
 
 export const App = () => {
   const [isMobile, setIsMobile] = React.useState(false);
